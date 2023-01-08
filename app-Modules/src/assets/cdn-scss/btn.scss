@@ -1,0 +1,227 @@
+@import "./variables";
+
+.style-btn {
+  /*min-width: 134px;*/
+  height: 44px;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 0 16px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  transition: 0.2s;
+
+  & i {
+    font-size: 24px;
+  }
+
+  &:hover {
+    box-shadow: 0px 15px 30px 0px #00000014, 0px 10px 15px 0px #00000014, 0px 4px 10px 0px #00000014, 0px 2px 4px 0px #0000000f;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08), 0px 8px 15px rgba(0, 0, 0, 0.08), 0px 15px 20px rgba(0, 0, 0, 0.08), 0px 30px 40px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.style-btn-fit-content {
+  height: 52px;
+  min-width: unset;
+  padding: 0 4px;
+  border-radius: 5px;
+  color: $ex-black;
+  background-color: $ex-white;
+  border: 2px solid $ex-white;
+  box-shadow: 0 2px 4px $ex-light-gray;
+
+  &:hover {
+    background-color: lighten($ex-light-gray, 11%);
+    border: 2px solid lighten($ex-light-gray, 11%);
+    box-shadow: 0 2px 4px $ex-light-gray;
+  }
+
+  &:focus {
+    box-shadow: 0 2px 4px $ex-light-gray;
+  }
+}
+
+.style-btn-fill {
+  color: $ex-white;
+  background-color: $ex-primary;
+  border: 2px solid $ex-primary;
+
+  &:hover {
+    background-color: darken($ex-primary, 7%);
+    border: 2px solid darken($ex-primary, 7%);
+  }
+
+  &:focus {
+    border: 2px solid darken($ex-primary, 10%) !important;
+  }
+
+  &.style-btn-disable {
+    color: $ex-white;
+    background-color: $ex-light-gray;
+    border: 2px solid $ex-light-gray;
+    box-shadow: unset !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+      background-color: $ex-light-gray;
+      border: 2px solid $ex-light-gray;
+    }
+
+    &:focus {
+      border: 2px solid $ex-light-gray !important;
+    }
+  }
+}
+
+.style-btn-fill-white {
+  color: $ex-primary;
+  background-color: $ex-white;
+  border: 2px solid $ex-white;
+
+  /*&:hover {
+    background-color: lighten($ex-primary, 27%);
+    border: 2px solid lighten($ex-primary, 27%);
+  }*/
+
+  &:focus {
+    border: 2px solid $ex-white !important;
+  }
+
+  &.style-btn-disable {
+    color: $ex-white;
+    background-color: $ex-light-gray;
+    border: 2px solid $ex-light-gray;
+    box-shadow: unset !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+      background-color: $ex-light-gray;
+      border: 2px solid $ex-light-gray;
+    }
+
+    &:focus {
+      border: 2px solid $ex-light-gray !important;
+    }
+  }
+}
+
+.style-btn-transparent {
+  color: $ex-primary;
+  background-color: transparent;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: lighten($ex-primary, 27%);
+    border: 2px solid lighten($ex-primary, 27%);
+  }
+
+  &:focus {
+    border: 2px solid $ex-primary !important;
+  }
+
+  &.style-btn-disable {
+    color: $ex-white;
+    background-color: $ex-light-gray;
+    border: 2px solid $ex-light-gray;
+    box-shadow: unset !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+      background-color: $ex-light-gray;
+      border: 2px solid $ex-light-gray;
+    }
+
+    &:focus {
+      border: 2px solid $ex-light-gray !important;
+    }
+  }
+}
+
+.style-btn-outline {
+  color: $ex-primary;
+  background-color: transparent;
+  border: 2px solid $ex-primary;
+
+  &:hover {
+    background-color: lighten($ex-primary, 27%);
+  }
+
+  &:focus {
+    border: 2px solid darken($ex-primary, 10%) !important;
+  }
+
+  &.style-btn-disable {
+    color: $ex-light-gray;
+    border: 2px solid $ex-light-gray;
+    box-shadow: unset !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+      background-color: unset;
+      border: 2px solid $ex-light-gray;
+    }
+
+    &:focus {
+      border: 2px solid $ex-light-gray !important;
+    }
+  }
+
+  &.style-btn-loading-dots {
+    color: transparent;
+
+    &::after {
+      content: "";
+      width: 60px;
+      height: 30px;
+      position: absolute;
+      background-image: url('/assets/images/btn-load-gray.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.style-btn-loading-spinner {
+  color: transparent;
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 3px solid transparent;
+    border-top-color: $ex-white;
+    border-radius: 50%;
+    animation: btn-loading-spinner .9s ease infinite;
+  }
+
+  @keyframes btn-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+.style-btn-loading-dots {
+  color: transparent;
+
+  &::after {
+    content: "";
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    background-image: url('/assets/images/btn-load-white.svg');
+    background-repeat: no-repeat;
+  }
+}

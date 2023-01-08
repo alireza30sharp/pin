@@ -1,0 +1,35 @@
+@import "./variables";
+
+.style-collapse-container {
+  border-bottom: 1px solid $ex-light-gray;
+  transition: 0.2s;
+
+  & .style-list-container {
+    padding: 2rem 0;
+    transition: 0.2s;
+
+    & i {
+      transition: 0.2s;
+    }
+  }
+
+  & .style-collapse {
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+  }
+
+  &.show-collapse {
+
+    & .style-collapse {
+      padding: 1rem 0;
+      height: auto;
+      overflow: unset;
+    }
+  }
+
+  & .rotate-icon {
+    transform: rotate(-90deg);
+  }
+}

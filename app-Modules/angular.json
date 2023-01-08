@@ -28,9 +28,18 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/highlight.js/styles/androidstudio.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -103,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "2b895492-da21-4e29-9a2c-f43c6350dfcc"
   }
 }

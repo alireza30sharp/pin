@@ -1,1 +1,32 @@
+@import"./assets/cdn-scss/cdn.scss";
+
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: iranYekanNumber;
+  src: url(./assets/fonts/ttf/iranyekanwebregularfanum.ttf) format("ttf"),
+    url(./assets/fonts/woff/iranyekanwebregularfanum.woff) format("woff"),
+    url(./assets/fonts/eot/iranyekanwebregularfanum.eot) format("eot");
+}
+
+body {
+  overflow-x: hidden;
+  direction: rtl;
+  font-family: iranYekanNumber !important;
+
+  /*& textarea:nth-last-child(1) {
+    left: unset !important;
+    opacity: 0 !important;
+  }*/
+}
+
+.code-section {
+  direction: ltr;
+}
+
+.modal-dialog {
+  margin-top: 5rem !important;
+}
+
+.w-mc {
+  width: min-content;
+}

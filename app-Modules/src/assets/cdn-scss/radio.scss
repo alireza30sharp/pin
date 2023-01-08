@@ -1,0 +1,98 @@
+@import "./variables";
+
+.style-radio-container {
+  height: 16px;
+  display: flex;
+  position: relative;
+  padding-left: 16px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+
+  &.radio-disable {
+    & .style-radio:checked ~ .style-checkmark {
+      pointer-events: none;
+      background-color: $ex-light-gray;
+      border: 1px solid $ex-light-gray;
+    }
+  }
+
+  & .style-radio-text {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1;
+  }
+
+  & .style-radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked ~ .style-checkmark {
+      background-color: $ex-primary;
+      border: 1px solid $ex-primary;
+    }
+
+    &:checked ~ .style-checkmark:after {
+      display: block;
+      top: 4px !important;
+      left: 4px !important;
+    }
+
+    &:checked ~ .style-checkmark-minus:after {
+      content: "" !important;
+    }
+  }
+
+  & .style-checkmark-minus {
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $ex-light-gray;
+
+    &:after {
+      display: block !important;
+    }
+
+    &:after {
+      top: 6px !important;
+      height: 2px !important;
+      background-color: lighten($ex-gray, 20%) !important;
+    }
+  }
+
+  & .style-checkmark {
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $ex-light-gray;
+    border-radius: 50%;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    &:after {
+      width: 6px;
+      height: 6px;
+      top: 4px;
+      left: 4px;
+      border-radius: 50%;
+      background: $ex-white;
+    }
+  }
+
+  &:hover .style-checkmark {
+    border: 1px solid darken($ex-light-gray, 7%);
+    box-shadow: 0 0 5px lighten($ex-light-gray, 5%);
+  }
+}

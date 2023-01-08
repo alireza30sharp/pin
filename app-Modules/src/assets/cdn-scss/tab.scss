@@ -1,0 +1,36 @@
+@import "./variables";
+
+.style-tab-container {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  list-style: none;
+  font-size: 12px;
+  margin: 0;
+  color: $ex-blue-gray;
+  border-bottom: 1px solid $ex-light-gray;
+
+  & .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 2rem;
+    margin-bottom: -1px;
+    white-space: nowrap;
+    cursor: pointer;
+
+    & i {
+      font-size: 16px;
+    }
+
+    &:hover {
+      background-color: lighten($ex-light-gray, 11%);
+    }
+  }
+
+  & .style-active-tab {
+    color: $ex-primary;
+    border-bottom: 1.5px solid $ex-primary;
+  }
+}

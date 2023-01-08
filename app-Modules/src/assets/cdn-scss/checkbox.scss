@@ -1,0 +1,97 @@
+@import "./variables";
+
+.style-checkbox-container {
+  /*width: 100%;*/
+  height: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 16px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+
+  &.checkbox-disable {
+    & .style-checkbox:checked ~ .style-checkmark {
+      pointer-events: none;
+      background-color: $ex-light-gray;
+      border: 1px solid $ex-light-gray;
+    }
+  }
+
+  & .style-checkbox-text {
+    font-size: 14px;
+  }
+
+  & .style-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 9;
+
+    &:checked ~ .style-checkmark {
+      background-color: $ex-primary;
+      border: 1px solid $ex-primary;
+    }
+
+    &:checked ~ .style-checkmark:after {
+      display: block;
+      top: 4px !important;
+      left: 4px !important;
+    }
+
+    &:checked ~ .style-checkmark-minus:after {
+      content: "" !important;
+    }
+  }
+
+  & .style-checkmark-minus {
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $ex-light-gray;
+
+    &:after {
+      display: block !important;
+    }
+
+    &:after {
+      top: 6px !important;
+      height: 2px !important;
+      background-color: lighten($ex-gray, 20%) !important;
+    }
+  }
+
+  & .style-checkmark {
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $ex-light-gray;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    &:after {
+      width: 6px;
+      height: 6px;
+      top: 4px;
+      left: 4px;
+      border-radius: 2px;
+      background: $ex-white;
+    }
+  }
+
+  &:hover .style-checkmark {
+    border: 1px solid darken($ex-light-gray, 7%);
+    box-shadow: 0 0 5px lighten($ex-light-gray, 5%);
+  }
+}

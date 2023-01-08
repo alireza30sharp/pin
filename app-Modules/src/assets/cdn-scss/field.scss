@@ -1,0 +1,257 @@
+@import "./variables";
+
+.style-field-container {
+  min-width: unset;
+  padding: unset;
+  padding-inline-start: 10px;
+  margin: unset;
+  border: 2px solid $ex-light-gray;
+  border-radius: 10px;
+  position: relative;
+  height: 63px;
+  direction: rtl;
+  transition: 0.1s;
+  /*margin-bottom: 30px;*/
+  cursor: pointer;
+
+  &:hover {
+    border-color: $ex-gray;
+
+    & .style-space-label {
+
+      &::after {
+        background-color: $ex-gray;
+      }
+    }
+  }
+
+  &:focus-within {
+    border-color: $ex-primary !important;
+
+    & .style-label {
+      color: $ex-primary !important;
+    }
+  }
+
+  & .style-text-right {
+    width: 50%;
+    position: absolute;
+    right: 10px;
+    top: 52px;
+    font-size: 12px;
+    color: $ex-gray;
+  }
+
+  & .style-text-left {
+    position: absolute;
+    left: 10px;
+    top: 52px;
+    font-size: 12px;
+    color: $ex-gray;
+    direction: ltr;
+  }
+
+  & > .style-icon-right {
+    display: none;
+    position: absolute;
+    top: 8.5px;
+    right: 10px;
+    font-size: 22px;
+  }
+
+  & > .style-icon-left {
+    display: none;
+    position: absolute;
+    top: 8.5px;
+    left: 10px;
+    font-size: 22px;
+  }
+
+  &.style-field-icon-right {
+    & .style-icon-right {
+      display: block;
+    }
+
+    & .style-field {
+      padding-right: 40px;
+    }
+
+    & .style-label {
+      right: 40px;
+    }
+
+    & .style-label {
+      //truncate-styles
+      max-width: 87%;
+    }
+
+    & .style-space-label {
+      //truncate-styles
+      max-width: 90%;
+    }
+  }
+
+  &.style-field-icon-left {
+    & .style-icon-left {
+      display: block;
+    }
+
+    & .style-field {
+      width: 90%;
+    }
+
+    & .style-label {
+      //truncate-styles
+      max-width: 87%;
+    }
+
+    & .style-space-label {
+      //truncate-styles
+      max-width: 90%;
+    }
+  }
+
+  &.style-field-icon-left.style-field-icon-right {
+    & .style-label {
+      //truncate-styles
+      max-width: 80%;
+    }
+
+    & .style-space-label {
+      //truncate-styles
+      max-width: 84%;
+    }
+  }
+
+  & .style-label {
+    color: $ex-gray;
+    position: absolute;
+    top: 11px;
+    font-size: 12px;
+    right: 15px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    //truncate-styles
+    max-width: 92%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &.style-field-value {
+    & .style-label {
+      top: -15px !important;
+      right: 15px;
+      font-size: 10px;
+      transition: 0.2s ease all;
+    }
+
+    & .style-space-label {
+      &::after {
+        opacity: 0 !important;
+      }
+    }
+  }
+
+  & .style-space-label {
+    color: transparent;
+    float: unset;
+    width: unset;
+    padding: 0 5px;
+    margin-bottom: unset;
+    font-size: 10px;
+    line-height: unset;
+    position: relative;
+    user-select: none;
+    //truncate-styles
+    max-width: 96%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::after {
+      content: "-";
+      background-color: $ex-light-gray;
+      width: 100%;
+      height: 2px;
+      color: transparent;
+      font-weight: bold;
+      position: absolute;
+      top: 6.5px;
+      right: 0;
+      transition: 0.1s;
+    }
+  }
+
+  & .style-field {
+    width: 97%;
+    height: 52px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: -6px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: none !important;
+    border-radius: 10px;
+    padding: 0 7px;
+    background-color: transparent !important;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  &.field-disable {
+    pointer-events: none;
+    opacity: 50%;
+  }
+
+  &.field-error {
+    border-color: $ex-red;
+
+    & .style-space-label {
+      &:after {
+        background-color: $ex-red;
+      }
+    }
+
+    & .style-label {
+      color: $ex-red;
+    }
+
+    & .style-text-right {
+      color: $ex-red;
+    }
+  }
+
+  &.field-empty {
+    background-color: lighten($ex-blue-gray, 50%);
+    border-color: lighten($ex-blue-gray, 50%);
+
+    & .style-space-label {
+      &:after {
+        background-color: lighten($ex-blue-gray, 50%);
+      }
+    }
+
+    & .style-label {
+      color: lighten($ex-gray, 22%);
+    }
+  }
+
+  &.field-without-label {
+    height: 56px;
+
+    & .style-field {
+      top: 0;
+    }
+
+    & .style-label {
+      top: 17px;
+    }
+  }
+}
