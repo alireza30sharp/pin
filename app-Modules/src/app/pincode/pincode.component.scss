@@ -1,0 +1,57 @@
+$color-primary: rgb(97, 132, 255);
+
+$color-white: rgb(255, 255, 255);
+
+$color-black: rgb(0, 0, 0);
+
+$color-gray: rgb(148, 148, 148);
+
+$color-light-gray: rgb(222, 222, 222);
+
+$color-blue-gray: rgb(101, 119, 134);
+
+$color-red: rgb(255, 57, 93);
+
+.pincode-container {
+    display: flex;
+    gap: 1rem;
+    direction: ltr;
+  
+    & input {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+      font-size: 16px;
+      text-align: center;
+      outline: none;
+  
+      &:not(:placeholder-shown) {
+        color: #ffffff;
+        background: linear-gradient(0deg, lighten($color-primary, 10%), $color-primary);
+        box-shadow: 0 4px 0px darken($color-primary, 8%);
+        border-color: transparent;
+      }
+      /* Chrome, Safari, Edge, Opera */
+      &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      /* Firefox */
+      &[type=number] {
+        -moz-appearance: textfield;
+      }
+  
+      &::-moz-selection { /* Code for Firefox */
+        color: #fff;
+        background: #00000010;
+      }
+  
+      &::selection {
+        color: #fff;
+        background: #00000010;
+      }
+    }
+  }
+  
